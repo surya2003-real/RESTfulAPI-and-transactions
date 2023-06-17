@@ -1,0 +1,16 @@
+{% extends 'users/base.html' %}
+{% block content %}
+    {% for transaction in transactions %}
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="{{ transaction.sender.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ transaction.sender }}</a>
+              <small class="text-muted">{{ transaction.date_time|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{%url 'transaction-detail' transaction.id %}">{{ transaction.amount }}</a></h2>
+            <p class="article-content">{{ transaction.receiver }}</p>
+          </div>
+    </article>
+    {% endfor %}
+{% endblock %}
