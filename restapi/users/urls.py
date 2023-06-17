@@ -11,4 +11,8 @@ urlpatterns = [
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'), name='password_reset'),
     path('showusers/', views.allusers, name='allusers'),
     path('profile/', views.profile, name='profile'),
+    #view profile using a primary key
+    path('profile/<int:pk>/', views.view_profile_pk, name='view_profile_pk'),
+    path('dElEtE/', views.delete_all_users, name='delete_all_users'),
+    path('dElEtE/<int:pk>/', views.delete_user_pk, name='delete_user_pk'),
 ]

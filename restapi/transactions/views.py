@@ -39,6 +39,15 @@ class TransactionCreateView(LoginRequiredMixin, CreateView):
             messages.warning(self.request, f'Username of receiver does not exist')
             return redirect('transaction-create')
         else:
+            self.request.user.profile.amount=int(self.request.user.profile.amount)-int(self.request.POST['amount'])
+            self.request.user.profile.save()
+            # incrementing the amount of receiver
+            receiver=Profile.objects.get(user__username=self.request.POST['receiver'])
+            receiver.amount=int(receiver.amount)+int(self.request.POST['amount'])
+            receiver.save()
+            messages.success(self.request, f'Your transaction has been successful')
             return super().form_valid(form)
+
+
 
         

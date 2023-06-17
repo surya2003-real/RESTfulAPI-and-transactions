@@ -6,10 +6,12 @@
       <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
       <div class="media-body">
         <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary">Primary Key: {{ user.pk }}</p>
         <p class="text-secondary">{{ user.email }}</p>
         <p class="text-secondary">Balance: Rs.{{ user.profile.amount }}</p>
       </div>
     </div>
+    {% if user == request.user %}
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="form-group">
@@ -21,5 +23,6 @@
             <button class="btn btn-outline-info" type="submit">Update</button>
         </div>
     </form>
+    {% endif %}
   </div>
 {% endblock %}

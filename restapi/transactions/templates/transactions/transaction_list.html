@@ -10,6 +10,7 @@
             </div>
             <h2><a class="article-title" href="{%url 'transaction-detail' transaction.id %}">{{ transaction.amount }}</a></h2>
             <p class="article-content">{{ transaction.receiver }}</p>
+            <p class="article-content">Transaction ID: {{ transaction.pk }}</p>
           </div>
     </article>
     {% endfor %}

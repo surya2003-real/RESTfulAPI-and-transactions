@@ -3,7 +3,7 @@
     {% for user in users %}
     <article class="media content-section">
           <div class="media-body">
-            <h2><a class="article-title" href="#">{{ user.username }}</a></h2>
+            <h2><a class="article-title" href="{% url 'view_profile_pk' user.pk %}">{{ user.username }}</a></h2>
             <p class="article-content">{{ user.firstname }} {{ user.lastname }}</p>
             <p class="article-content">{{ user.email }}</p>
           </div>
