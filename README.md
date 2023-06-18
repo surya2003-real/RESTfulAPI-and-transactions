@@ -1,7 +1,7 @@
 # RESTfulAPI and transactions
 ## I have built a fully functional RESTful API using Django.
 
-### First activate the django environment using `django_env/Scripts/activate` and then 'cd restapi'.
+### First activate the django environment using `django_env/Scripts/activate` and then `cd restapi`.
 ### When you launch the website using `py manage.py runsever` you can have a GUI to interact with the backend functionalities.
 
 ### This site enables you to faciltate transaction between the users.
